@@ -8,7 +8,8 @@ model MigrationModel
 // Definition of global variables and actions
 global {
 	// reading in shapefile containing the regions and region-level data (e.g. population)
-	file shape_file_regions <- file("C:/Users/anja/Desktop/Ethiopia/ETH_regions/ETH_regions.shp"); 
+	// add file_path
+	file shape_file_regions <- file("file_path"); 
 	// reporting total migrant stock and flow 
 	int migrant_stock <- migrant_stock update: household count (each.migrated); 
 	int migrant_flow;
