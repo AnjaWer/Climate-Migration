@@ -4,7 +4,7 @@
 This project aims to better understand how impacts of climate change influence migration patterns. An agent-based modelling framework is developed to capture complex
 migration decision-making, social influences on migration decisions, and to explore localized migration scenarios. The model is complemented by an empirical analysis using panel data from rural Ethiopia. 
 
-The model represents a population of household agents residing in different regions. The household agents adapt to changes in their environment by deciding whether to stay or migrate (and if so, where to). Interactions between agents represent social influence on migration decisions. The model is implemented using the spatially explicit GAMA environment (http://gama-platform.org). It should be noted that the model implementation presents a proof-of-concept rather than a complete simulation tool.
+The model represents a population of household agents residing in different regions. The household agents adapt to changes in their environment by deciding whether to stay or migrate (and if so, where to). Interactions between agents represent social influence on migration decisions. The model is implemented using the spatially explicit GAMA environment (http://gama-platform.org). It should be noted that the model implementation presents a proof-of-concept rather than a comprehensive simulation tool.
 
 ## Files
 * migration_model.gaml: Contains the model, the agents, and the creation of the user interface in GAMA.
