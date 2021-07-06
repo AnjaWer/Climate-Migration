@@ -1,8 +1,6 @@
 /**
-* Name: MigrationModel
-* Agent-based migration model 
+* Name: Agent-based migration model 
 * Author: anja
-* Tags: 
 */
 
 model MigrationModel
@@ -14,17 +12,17 @@ global {
 	// reporting total migrant stock and flow 
 	int migrant_stock <- migrant_stock update: household count (each.migrated); 
 	int migrant_flow;
-	int hh_per_agent <- 20000; 	   		 // currently: one agent represents 20000 households
-	int ave_hh_size <- 5;				 // average household size 	
-	int run_time <-20;             		 // in years
-	float pop_growth <- 0.0;             // population growth rate
-	int switch_slow_onset <- 0;    		 // binary (1 = linear decrease of agricultural output)
-	float p_shock <- 0.0;          		 // probability of climate shock per year
-	int shock <- 0;						 // binary (1 = shock in given year)
-	int t_shock <- 0;					 // storing most recent year of shock 
-	float financial_thresh <- 50.0;		 // minimum savings to be able to migrate 
-	float adaptation_thresh <- 0.5;		 // currently: threshold of household vulnerability 
-	float zero_social <- 0.05;			 // percentage of households with social threshold = 0
+	int hh_per_agent <- 20000; 	   		// currently: one agent represents 20000 households
+	int ave_hh_size <- 5;				// average household size 	
+	int run_time <-20;             		        // e.g. in years
+	float pop_growth <- 0.0;                        // population growth rate
+	int switch_slow_onset <- 0;    			// binary (1 = linear decrease of agricultural output)
+	float p_shock <- 0.0;          			// probability of climate shock per year
+	int shock <- 0;					// binary (1 = shock in given year)
+	int t_shock <- 0;				// storing most recent year of shock 
+	float financial_thresh <- 50.0;		 	// minimum savings to be able to migrate 
+	float adaptation_thresh <- 0.5;		 	// currently: threshold of household vulnerability 
+	float zero_social <- 0.05;			// percentage of households with social threshold = 0
 	list<region> net_migration_data <- [];
 	
 	// creating region agents, assigning regional level data, creating household agents
@@ -72,19 +70,19 @@ global {
 
 // Definition of representative household agents
 species household {
-	int age <- rnd(15,60) update: age + 1;  // age of household head 
-	int education <- rnd_choice([0.5,0.5]); // education level of household head
-	float income <- rnd(30.0,100.0);		// income from agriculture
-//	float nonfarm_income <- rnd_choice([0.8,0.2]); // income from nonfarm work
+	int age <- rnd(15,60) update: age + 1;  		// age of household head 
+	int education <- rnd_choice([0.5,0.5]); 		// education level of household head
+	float income <- rnd(30.0,100.0);			// income from agriculture
+//	float nonfarm_income <- rnd_choice([0.8,0.2]); 		// income from nonfarm work
 //	float hh_needs <- rnd(30.0,100.0);	
 	float savings <- rnd(0.0,100.0) update: savings + rnd(-0.05,0.05)*income; // household savings
 	float vulnerability <- 0.0;				// initial value, updated every step (see below)
-	string origin;							// region of origin
-	string region_name;						// current region of residence
+	string origin;						// region of origin
+	string region_name;					// current region of residence
 	bool migrated <- false; 
 	float social_norm <- 0.0;				// initial social norm, updated every step (see below) 
 	list<household> social_network <- [];
-	float social_thresh <- rnd(0.0, 0.4);   // distribution of social thresholds of majority of households
+	float social_thresh <- rnd(0.0, 0.4);   		// distribution of social thresholds of majority of households
 	float alpha_econ <- 0.0; 				// weights for decision factors for choice of destination, initialized below
 	float alpha_dist <- 0.0;
 	float alpha_social <- 0.0;
