@@ -8,6 +8,6 @@ The model represents a population of household agents residing in different regi
 
 ## Files
 * migration_model.gaml: Contains the model, the agents, and the creation of the user interface in GAMA.
-* regions_shape.shp: Contains the shapefile with the regions in Ethiopia and regional level data input. 
+* ETH_regions.shp: Contains the shapefile with the regions in Ethiopia and regional level data input. 
 * data_analysis.R: Contains the empirical analysis using regression modelling techniques. 
 * data.csv: Contains the dataset used for the empirical analysis. The dataset has been constructed by combining survey data (http://www.migratingoutofpoverty.org/themes/migration-data/ethiopiaquant) with climate data (https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview). 
