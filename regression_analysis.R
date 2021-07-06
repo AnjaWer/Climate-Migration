@@ -1,6 +1,5 @@
 ## Loading libraries
 library(ggplot2)
-library(e1071)
 library(nnet)
 library(reshape2)
 library(caret)
@@ -11,7 +10,7 @@ library(mlogit)
 library(jtools)
 
 ### Reading in the dataset
-f = "cleaned_data_v17.csv"
+f = "data.csv"
 df_Mig <- read.table(f, sep = ",", header = T)
 colnames(df_Mig) <- gsub("\\.", "", colnames(df_Mig))
 
