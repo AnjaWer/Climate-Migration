@@ -1,4 +1,4 @@
-# Migration-and-Climate-Change
+# Climate-Migration
 
 ## Summary 
 This project aims to better understand how impacts of climate change influence migration patterns. An agent-based modelling framework is developed to capture complex
